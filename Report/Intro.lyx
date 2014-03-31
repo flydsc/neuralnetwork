@@ -307,45 +307,35 @@ Wine is popular drink for world wide people.
 \end_layout
 
 \begin_layout Section
-The next section
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:The-next-section"
+Dataset description
+\end_layout
 
-\end_inset
-
-
+\begin_layout Subsection
+Data selection
 \end_layout
 
 \begin_layout Standard
-\begin_inset Branch NoChildDocument
-status collapsed
+My goal in this assignment is to deal with a classification problem.
+ Therefore, dataset should be approperate for classfication job.
+ I chose this dataset with some reasons.
+ Firstly, the data has both features and class labels, which makes the classific
+ation job possible.Secondly, this data used in my work is structured and
+ numerical data, which is suitable for a neural network classfier.
+ If the data contains string featrues or other non-numerical features, the
+ data transformation should be done before the neural network classification
+ assignment.
+ Thirdly, this dataset's associated task is labeled as 'Classification,
+ Regression' in UCI Repository(http://archive.ics.uci.edu/ml/datasets/Wine+Quality).
+\end_layout
 
-\begin_layout Standard
-\begin_inset CommandInset bibtex
-LatexCommand bibtex
-bibfiles "thesisExample"
-options "alpha"
-
-\end_inset
-
-
+\begin_layout Subsection
+Data summary
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset nomencl_print
-LatexCommand printnomenclature
-set_width "custom"
-width "2.5cm"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
+Before the classfication, I explore the dataset to see if the condition
+ of dataset is good enough for my assignment.
+ 
 \end_layout
 
 \end_body
