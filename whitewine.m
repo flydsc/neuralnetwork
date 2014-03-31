@@ -4,24 +4,21 @@ close all;
 clear;
 clc;
 format compact;
-%% read data file
-
+%% Read the data and load the data
 [f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,class] = textread('train-white.csv' , '%f%f%f%f%f%f%f%f%f%f%f%f','delimiter',',');
 [t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,c] = textread('test-white.csv' , '%f%f%f%f%f%f%f%f%f%f%f%f','delimiter',',');
 
-
-
-%[input,minI,maxI] = premnmx( [f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11]')  ;
 [inputn,inputps]=mapminmax( [f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11]') ;
+testInput = mapminmax ( [t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11]' ) ;
+%% Generate the output matrices
+s = length( class ) ;%the number of the colunms should be the same as class number
+s_test = length(c);% A test output, help to generate the error matrix
+%sprintf( '%d',s)
 
-%input = [f1,f2,f3,f4,f5]'
-s = length( class ) ;
-s_test = length(c);
-sprintf( '%d',s)
+output = zeros( s , 7  ) ;%initialize the output matrix
+output_test = zeros(s_test,7);%initialize the test output matrix
 
-output = zeros( s , 7  ) ;
-output_test = zeros(s_test,7);
-
+%% initialization: use position to prsent the lable
 for i = 1 : s 
    temp1 = class(i);
    collum = temp1 - 2 ; 
@@ -33,29 +30,26 @@ for i = 1 : s_test
    output_test( i , collum_test  ) = 1 ;
 end
 
+%% set to generate the network 
 %net = newff( minmax(input) , [10 10 6] , {'tansig' 'logsig' 'purelin'} , 'traingdx' ) ; 
 net = newff( inputn ,output',  [5 5 5 15 30] , {'logsig' 'logsig' 'tansig' 'logsig' 'logsig'}  , 'traingd' ) ; 
 
+%% network setting
+net.trainparam.show = 50 ;%the show gap
+net.trainparam.epochs = 5000;% epochs used
+net.trainparam.goal = 0.0001 ;%the error goals
+net.trainParam.lr = 0.001 ;%the learning rate
 
-net.trainparam.show = 50 ;
-net.trainparam.epochs = 10000;
-net.trainparam.goal = 0.0001 ;
-net.trainParam.lr = 0.001 ;
 
-
-net = train( net, inputn , output' ) ;
+net =train( net, inputn , output' ) ;%start training
 
 
 %[t1,t2,t3,t4,t5,t6,t7,t8,t9,c] = textread('test.csv' , '%f%f%f%f%f%f%f%f%f%u','headerlines',1,'delimiter',',');
 
-
-%testInput = tramnmx ( [t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11]' ) ;
-testInput = mapminmax ( [t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11]' ) ;
-
-
+%% start simulation
 Y = sim( net , testInput ) 
 
-%accuracy caculation%
+%% accuracy caculation%
 [s1 , s2] = size( Y ) ;
 hitNum = 0 ;
 error_matrix = zeros(7,7);
@@ -78,8 +72,8 @@ sprintf('The accuracy is %3.3f%%',100 * hitNum / s2 )
 
 
 %The distribution for prediction and expection%
-figure(1)
-plot(1:s2,outindex,'r.');
+figure(1)%draw a plot
+plot(1:s2,outindex,'r.');%first is predict
 hold on;
 plot(1:s2,c,'b*');
 legend('Predict','Expect');
