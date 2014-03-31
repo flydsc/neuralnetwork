@@ -9,7 +9,7 @@ format compact;
 [t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,c] = textread('test-red.csv' , '%f%f%f%f%f%f%f%f%f%f%f%f','delimiter',',');%load test data and set first 11 colunms as input and the last one is class label
 
 [inputn,inputps]=mapminmax( [f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11]') ;%do the preprocess:processes matrices by normalizing the minimum and maximum values
-testInput = mapminmax ( [t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11]' ) ;%normalizing the test input
+
 %% Generate the output matrices
 s = length( class ) ;%the number of the colunms should be the same as class number
 s_test = length(c);% A test output, help to generate the error matrix
@@ -33,17 +33,25 @@ end
 net = newff( inputn ,output',  [5 5 15 30] , {'logsig' 'tansig' 'logsig' 'logsig'}  , 'traingd' ) ; 
 
 %%network setting
-net.trainparam.show = 50 ;%the show gap
-net.trainparam.epochs = 5000;% epochs used
-net.trainparam.goal = 0.0001 ;%the error goals
-net.trainParam.lr = 0.001 ;%the learning rate
+net.trainparam.show = 50 ;%the sho
+net.trainparam.epochs = 5000;
+net.trainparam.goal = 0.0001 ;
+net.trainParam.lr = 0.001 ;
 
-net = train( net, inputn , output' ) ;%start training
 
-%%start simulation
+net = train( net, inputn , output' ) ;
+
+
+%[t1,t2,t3,t4,t5,t6,t7,t8,t9,c] = textread('test.csv' , '%f%f%f%f%f%f%f%f%f%u','headerlines',1,'delimiter',',');
+
+
+%testInput = tramnmx ( [t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11]' ) ;
+testInput = mapminmax ( [t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11]' ) ;
+
+
 Y = sim( net , testInput ) 
 
-%%accuracy caculation%
+%accuracy caculation%
 [s1 , s2] = size( Y ) ;
 hitNum = 0 ;
 error_matrix = zeros(6,6);
