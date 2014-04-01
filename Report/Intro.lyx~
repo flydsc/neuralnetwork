@@ -325,7 +325,14 @@ ation job possible.Secondly, this data used in my work is structured and
  data transformation should be done before the neural network classification
  assignment.
  Thirdly, this dataset's associated task is labeled as 'Classification,
- Regression' in UCI Repository(http://archive.ics.uci.edu/ml/datasets/Wine+Quality).
+ Regression' in UCI Repository.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "winequality"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -333,9 +340,222 @@ Data summary
 \end_layout
 
 \begin_layout Standard
-Before the classfication , I explore the dataset to see if the condition
- of dataset is good enough for my assignment.
+Before the classfication, I explore the dataset to check the condition of
+ dataset.
+ Generally speaking, the dataset has two parts.
+ The first one relates to red wine preference samples with 1600 records
+ and the other one relates to the white wine preference samples with 4899
+ records.
+ The goal of the data is to invetigate physicochemical test to model wine
+ quality.
+ To do this, I use a tool called Rattle.
+ Rattle is a package of R language.
+ According to Williams
+\begin_inset CommandInset citation
+LatexCommand cite
+key "williams2011data"
+
+\end_inset
+
+, Rattle is "simple to use, quick to deploy, and allows us to rapidly work
+ through the data processing, modelling, and evaluation phases of a data
+ mining project." 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename pic/data_summary_red.JPG
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Data summary of red wine
+\begin_inset CommandInset label
+LatexCommand label
+name "Data summary of red wine"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+According to 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Data summary of red wine"
+
+\end_inset
+
+, this part consists of 12 variables and the last one is the class label.
+ In the data summary, we can see numbers are ranging from 0.012 to 289, which
+ means data should be scaled and norminallized before building the model.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename pic/data_summary_white.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Data summary of white wine
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Data-summary-of white wine"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+According to 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Data-summary-of white wine"
+
+\end_inset
+
+, the data of white wine is very similar to the red wine as shown above,
+ we also need to do the scale before modelling.
+ The quality is represnted by integer.
+ The wine is better when the number of quality is larger.The main difference
+ between red wine and white wine data is the range of quality.
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename pic/distribution_of_quality.png
+	lyxscale 90
+	scale 40
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pic/distribution_of_quality_white.pdf
+	lyxscale 90
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The distribution of quality
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:The-distribution-of"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As shown in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:The-distribution-of"
+
+\end_inset
+
+, the left is red wine with 6 levels from 3 to 8, and the right side is
+ white wine with 7 levels from 3 to 9.
+ In this case, the red wine would have 6 classes and white wine would have
+ 7 classes.
+ This is important since the number of class would determine the number
+ of output as well as the neural network internal structure.
+\end_layout
+
+\begin_layout Section
+Task description
 \end_layout
 
 \end_body
