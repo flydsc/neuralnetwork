@@ -556,6 +556,11 @@ reference "fig:The-distribution-of"
  of output as well as the neural network internal structure.
 \end_layout
 
+\begin_layout Standard
+As can be seen, the data is properate for using neural network and the complaxit
+y is proper to do the job.
+\end_layout
+
 \begin_layout Section
 Contributions and outlines
 \end_layout

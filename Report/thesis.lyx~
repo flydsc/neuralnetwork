@@ -989,8 +989,8 @@ restore the right header line
 \begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
-bibfiles "thesisExample"
-options "alpha"
+bibfiles "Reference"
+options "plain"
 
 \end_inset
 

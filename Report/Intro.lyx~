@@ -297,13 +297,15 @@ Wine is popular drink for world wide people.
  attributes.
  In this report, I picked up a data set from "Vinho Verde" wine related
  to red and white variant wines.
- In this data set, some key features are used to do the wine assessment.
- The qulity of wine is described in different levels ranging from one to
- ten.
- The wine is better as the level number is larger.
+ In this data set, some key features are used to do the wine assessment.The
+ wine is better as the level number is larger.
  I am going to use this data to train classfiers to do the classification
  upon both red wine and white wine.
- The main idea is test the 
+ The main task is to detect the quality of wines based on the result of
+ physicochemical test.
+ To do that, we need to build a classfier.
+ In this report, I am going to present a case study of neural network method
+ for detecting the quality of wines.
 \end_layout
 
 \begin_layout Section
@@ -555,7 +557,19 @@ reference "fig:The-distribution-of"
 \end_layout
 
 \begin_layout Section
-Task description
+Contributions and outlines
+\end_layout
+
+\begin_layout Standard
+In this project my main contributions are building two neural network classfier
+ for red wine and white wine respectively, doing the evaluation based on
+ the performance of classifers and doing the comparison between neural network
+ and other method.
+ This report is orgnised as follow: section 2 would prsent the method I
+ used in my work, section 3 would prsent the result of my experiment and
+ comparison between the result from my work and from related paper,,section
+ 4 would talk about the result by other method, section 5 would conclude
+ the report and state the future work.
 \end_layout
 
 \end_body

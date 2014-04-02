@@ -556,6 +556,10 @@ reference "fig:The-distribution-of"
  of output as well as the neural network internal structure.
 \end_layout
 
+\begin_layout Standard
+As can be seen, the data is properate for using neural network si
+\end_layout
+
 \begin_layout Section
 Contributions and outlines
 \end_layout
@@ -566,8 +570,10 @@ In this project my main contributions are building two neural network classfier
  the performance of classifers and doing the comparison between neural network
  and other method.
  This report is orgnised as follow: section 2 would prsent the method I
- used in my work, section 3 would prsent the result of my experiment,section
- 4 would talk about the result from my work and from related paper
+ used in my work, section 3 would prsent the result of my experiment and
+ comparison between the result from my work and from related paper,,section
+ 4 would talk about the result by other method, section 5 would conclude
+ the report and state the future work.
 \end_layout
 
 \end_body
