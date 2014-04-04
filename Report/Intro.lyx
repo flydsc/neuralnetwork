@@ -362,6 +362,13 @@ key "williams2011data"
 , Rattle is "simple to use, quick to deploy, and allows us to rapidly work
  through the data processing, modelling, and evaluation phases of a data
  mining project." 
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:rattle"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

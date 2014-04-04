@@ -368,21 +368,93 @@ key "Cortez2009"
 
 \end_inset
 
-, they are focusing on SVM and regression , neural ne
+, they are focusing on SVM and regression , neural network is used to do
+ the basedline.
 \end_layout
 
 \begin_layout Standard
-In this report, firstly, I am going to following their experiece to build
- the network and then I will modify the struture based on the result to
- get as good result as I can.
+In this report, firstly, I am going to following Zhang and Li's experiece
+\begin_inset CommandInset citation
+LatexCommand cite
+key "zhang2002"
+
+\end_inset
+
+ to build the network and then I will modify the struture based on the result
+ to get as good result as I can.
 \end_layout
 
 \begin_layout Section
 Validation Method
 \end_layout
 
+\begin_layout Standard
+The aim of this report is developing a neural network classifier and capering
+ with the previous work(Cortez et al.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Cortez2009"
+
+\end_inset
+
+).
+ In Cortez et al.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Cortez2009"
+
+\end_inset
+
+'s paper, they were using confusion matrixes to sumerize the result of SVM
+ and caculate the precision values.Therefore, to compare with previous work,
+ I am going to generate the confusion matrixes for my network.
+\end_layout
+
+\begin_layout Standard
+In addition, to test each performance of different network, I will used
+ simple accuracy to test the result.
+ To obtain the simple accuracy, the hit number should be caculated firstly.
+ The hit number starts with zero and it would plus one when the program
+ finds one record being correctly classified.
+ In other word, hit number means the number of all the correct classified
+ records.
+ In the end the accuracy could be obtained by :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+accuracy=\frac{hit\ number}{Record\ amount}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore, the accuracy is the percentage of correct classified records.
+ In my work, I will use this to modify the network struture and improve
+ the result.
+\end_layout
+
 \begin_layout Section
 Comparison model method
+\end_layout
+
+\begin_layout Standard
+After comparing my work with previous one, I have used some other data mining
+ mining techniques to compare with.
+ All the method here are provided by Rattle
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:rattle"
+
+\end_inset
+
+.
+ In rattle, it provided four options for the certain dataset.
+ They are decision tree, forest, SVM and linear 
 \end_layout
 
 \begin_layout Standard
