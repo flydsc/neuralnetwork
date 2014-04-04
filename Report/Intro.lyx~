@@ -362,6 +362,13 @@ key "williams2011data"
 , Rattle is "simple to use, quick to deploy, and allows us to rapidly work
  through the data processing, modelling, and evaluation phases of a data
  mining project." 
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:rattle"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -575,6 +582,10 @@ In this project my main contributions are building two neural network classfier
  comparison between the result from my work and from related paper,,section
  4 would talk about the result by other method, section 5 would conclude
  the report and state the future work.
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \end_body

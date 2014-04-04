@@ -31,13 +31,13 @@ for i = 1 : s_test
 end
 
 %% set to generate the network 
-net = newff( inputn ,output',  [5 5 15 30] , {'logsig' 'tansig' 'logsig' 'logsig'}  , 'traingd' ) ; 
+net = newff( inputn ,output',  [9] , {'logsig'}  , 'traingd' ) ; 
 
 %% network setting
 net.trainparam.show = 50 ;%the show gap
-net.trainparam.epochs = 5000;% epochs used
+net.trainparam.epochs = 10000;% epochs used
 net.trainparam.goal = 0.0001 ;%the error goals
-net.trainParam.lr = 0.001 ;%the learning rate
+net.trainParam.lr = 0.1 ;%the learning rate
 
 net = train( net, inputn , output' ) ;%start training
 

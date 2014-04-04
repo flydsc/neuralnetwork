@@ -381,7 +381,14 @@ key "zhang2002"
 \end_inset
 
  to build the network and then I will modify the struture based on the result
- to get as good result as I can.
+ to get as good result as I can
+\begin_inset CommandInset label
+LatexCommand label
+name "NNdesign"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
