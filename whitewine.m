@@ -32,7 +32,7 @@ end
 
 %% set to generate the network 
 %net = newff( minmax(input) , [10 10 6] , {'tansig' 'logsig' 'purelin'} , 'traingdx' ) ; 
-net = newff( inputn ,output',  [5 5 5 15 30] , {'logsig' 'logsig' 'tansig' 'logsig' 'logsig'}  , 'traingd' ) ; 
+net = newff( inputn ,output',  [20 40] , {'logsig' 'logsig'}  , 'traingd' ) ; 
 
 %% network setting
 net.trainparam.show = 50 ;%the show gap

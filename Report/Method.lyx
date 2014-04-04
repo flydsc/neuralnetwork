@@ -290,6 +290,100 @@ Methodology
 Model selection
 \end_layout
 
+\begin_layout Subsection
+Network structure
+\end_layout
+
+\begin_layout Standard
+According to Funahashi
+\begin_inset CommandInset citation
+LatexCommand cite
+key "funahashi1989approximate"
+
+\end_inset
+
+, any logical circuit could be used on McCulloch-Pitts model.
+ There are different theories dealing with building a network for certain
+ problem.
+ For example, Zhang and Li used three-layers network including one hidden
+ layer
+\begin_inset CommandInset citation
+LatexCommand cite
+key "zhang2002"
+
+\end_inset
+
+.
+ They states that three-layer structure could solve any problems mapping
+ from n dimensions to m dimensions according to Kolmogorov's theory.
+ For the amount of node, they used a formula based on their experiment experienc
+e.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+N_{H}=\frac{N_{1}+\max(N_{o}+N_{c})}{2}\label{eq:node number}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In equation
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:node number"
+
+\end_inset
+
+, 
+\begin_inset Formula $N_{H},N_{1},N_{o},N_{c}$
+\end_inset
+
+represent the amount of hidden nodes,input nodes, output nodes and target
+ nodes respectively.
+ In their opinion, the number of hidden nodes is related to the specific
+ input and output and the number would affect the performance of the whole
+ network.
+ Therefore, the best way to obtain the proper number is do the experiment
+ and modify it manually.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "zhang2002"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the paper of Cortez et al.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Cortez2009"
+
+\end_inset
+
+, they are focusing on SVM and regression , neural network is used to do
+ the basedline.
+\end_layout
+
+\begin_layout Standard
+In this report, firstly, I am going to following Zhang and Li's experiece
+\begin_inset CommandInset citation
+LatexCommand cite
+key "zhang2002"
+
+\end_inset
+
+ to build the network and then I will modify the struture based on the result
+ to get as good result as I can.
+\end_layout
+
 \begin_layout Section
 Validation Method
 \end_layout
